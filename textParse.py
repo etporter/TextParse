@@ -20,10 +20,16 @@ class textParse:
     def clearSC(self):
         self.SC = []
 
-    def parseThis(self,pathway,option):
+    def parseFile(self,pathway,option):
         a = self.readFile(pathway,option)
-        for i in self.splitchars:
-            a = self.parse(a,i)
+        for i in self.SC:
+            a = textParse.parse(a,i)
+        return a
+
+    def parseString(self,string):
+        a = string
+        for i in self.SC:
+            a = textParse.parse(a,i)
         return a
 
 # require: pathway is string containing the file's pathway
