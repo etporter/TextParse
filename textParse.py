@@ -78,6 +78,6 @@ class textParse:
                 a=i.split(char)
                 c = ''
                 for j in a:
-                    c+=i
+                    c+=j
                 newList.append(c)
             return newList
