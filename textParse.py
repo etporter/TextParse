@@ -62,3 +62,22 @@ class textParse:
         f=open(fileName,'w')
         f.write(str(inpt))
         f.close()
+
+    @staticmethod
+    def removeChar(inpt,char):
+        if type(inpt) is str:
+            a=inpt.split(char)
+            c = ''
+            for i in a:
+                c += i
+            return c
+
+        elif isinstance(inpt,list):
+            newList = []
+            for i in inpt:
+                a=i.split(char)
+                c = ''
+                for j in a:
+                    c+=i
+                newList.append(c)
+            return newList
