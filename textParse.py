@@ -5,7 +5,7 @@ Use the constructor for a specific, repeated use of this class.
 Otherwise, you can use the static methods to parse your text.
 """
 
-class textParse:
+class TextParse:
 
 # require: splitchars is a list of single character strings
     def __init__(self,splitchars):
@@ -13,20 +13,20 @@ class textParse:
 
 # require: splitchar is a single character string
 # ensure: splitchar is added to list of splitchars
-    def nextSC(self,splitchar):
+    def NextSC(self,splitchar):
         self.SC.append(splitchar)
 
 # ensure: list of splitchars is empty
-    def clearSC(self):
+    def ClearSC(self):
         self.SC = []
 
-    def parseFile(self,pathway,option):
+    def ParseFile(self,pathway,option):
         a = self.readFile(pathway,option)
         for i in self.SC:
             a = textParse.parse(a,i)
         return a
 
-    def parseString(self,string):
+    def ParseString(self,string):
         a = string
         for i in self.SC:
             a = textParse.parse(a,i)
@@ -36,7 +36,7 @@ class textParse:
 #            option is an open option, e.g. 'r'
 # ensure: return contents of file as string
     @staticmethod
-    def readFile(pathway,option):
+    def ReadFile(pathway,option):
         f = open(pathway,option)
         instring = f.read()
         f.close()
@@ -45,7 +45,7 @@ class textParse:
 # require: input is a string, splitChar is the character to split by
 # ensure: return split up list of strings
     @staticmethod
-    def parse(inpt,splitChar):
+    def Parse(inpt,splitChar):
         if type(inpt) is str:
             newArray = inpt.split(splitChar)
             return newArray
@@ -58,13 +58,13 @@ class textParse:
 # require: input is a string, file is name of the file to write to or create
 # ensure: file now contains input
     @staticmethod
-    def write(inpt,fileName):
+    def Write(inpt,fileName):
         f=open(fileName,'w')
         f.write(str(inpt))
         f.close()
 
     @staticmethod
-    def removeChar(inpt,char):
+    def RemoveChar(inpt,char):
         if type(inpt) is str:
             a=inpt.split(char)
             c = ''
