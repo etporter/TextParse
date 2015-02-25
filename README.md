@@ -1,6 +1,7 @@
-textParse module - version 1.0
+TextParse Module
 ------------------------------
-Copyright 2014 Ethan Porter
+Copyright 2015 Ethan Porter
+===========================
 
 This module includes both a constructor for a textParse object and static
 methods.
